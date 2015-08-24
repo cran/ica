@@ -1,7 +1,7 @@
 \name{icaplot}
 \alias{icaplot}
 \title{
-Plot densities of source signal distributions
+Plot Densities of Source Signal Distributions
 }
 \description{
 Plot density (pdf) and kurtosis for the 18 source signal distributions used in Bach and Jordan (2002); see \code{\link{icasamp}} for more information.
@@ -45,10 +45,13 @@ Bach, F.R. & Jordan, M.I. (2002). Kernel independent component analysis. \emph{J
 Nathaniel E. Helwig <helwig@umn.edu>
 }
 \examples{
-##########   EXAMPLE (not run)   ##########
 
-#quartz(height=9,width=7)
-#par(mar=c(3,3,3,3))
-#icaplot()
+\dontrun{
+##########   EXAMPLE   ##########
+
+quartz(height=9,width=7)
+par(mar=c(3,3,3,3))
+icaplot()
+}
 
 }

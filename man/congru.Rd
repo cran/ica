@@ -1,24 +1,24 @@
 \name{congru}
 \alias{congru}
 \title{
-Tucker's congruence coefficient
+Tucker's Congruence Coefficient
 }
 \description{
-Tucker's congruence coefficient is the unadjusted (or uncentered) correlation coefficient between two vectors \code{x} and \code{y}. Ranges between -1 (perfect negative association) and 1 (perfect positive association) with a value of 0 denoting no linear relationship.
+Calculates Tucker's congruence coefficient (uncentered correlation) between \code{x} and \code{y} if these are vectors. If \code{x} and \code{y} are matrices then the congruence between the columns of \code{x} and \code{y} are computed.
 }
 \usage{
-congru(x,y)
+congru(x, y = NULL)
 }
 \arguments{
   \item{x}{
-Vector of dimension \eqn{n \times 1}.
+Numeric vector, matrix or data frame.
 }
   \item{y}{
-Vector of dimension \eqn{n \times 1}.
+NULL (default) or a vector, matrix or data frame with compatible dimensions to \code{x}.The default is equivalent to \code{y = x} (but more efficient).
 }
 }
 \value{
-Returns a scalar (the congruence coefficient). 
+Returns a scalar or matrix with congruence coefficient(s).
 }
 \references{
 Tucker, L.R. (1951). \emph{A method for synthesis of factor analysis studies} (Personnel Research Section Report No. 984). Washington, DC: Department of the Army.
@@ -31,17 +31,28 @@ Tucker's congruence coefficient is defined as \deqn{r = \frac{\sum_{i=1}^{n}x_{i
 where \eqn{x_{i}} and \eqn{y_{i}} denote the \eqn{i}-th elements of \code{x} and \code{y}.
 }
 \note{
-If inputs \code{x} and \code{y} are matrices, inputs will be vectorized before calculating \emph{r}.
+If \code{x} is a vector, you must also enter \code{y}.
 }
 \examples{
-##########   EXAMPLE   ##########
+##########   EXAMPLE 1   ##########
 
-A<-rnorm(100)
-B<-rnorm(100)
-C<-A*5
-D<-A*(-0.5)
+set.seed(1)
+A <- rnorm(100)
+B <- rnorm(100)
+C <- A*5
+D <- A*(-0.5)
 congru(A,B)
 congru(A,C)
 congru(A,D)
+
+
+
+##########   EXAMPLE 2   ##########
+
+set.seed(1)
+A <- cbind(rnorm(20),rnorm(20))
+B <- cbind(A[,1]*-0.5,rnorm(20))
+congru(A)
+congru(A,B)
 
 }

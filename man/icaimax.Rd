@@ -1,7 +1,7 @@
 \name{icaimax}
 \alias{icaimax}
 \title{
-ICA via Infomax algorithm
+ICA via Infomax Algorithm
 }
 \description{
 Computes ICA decomposition using Bell and Sejnowski's (1995) Information-Maximization (Infomax) approach with various options.
@@ -67,8 +67,6 @@ Annealing angle and proportion for gradient descent learing rate (see Details). 
 }
 \references{
 Bell, A.J. & Sejnowski, T.J. (1995). An information-maximization approach to blind separation and blind deconvolution. \emph{Neural Computation, 7}, 1129-1159.
-
-Helwig, N.E. (in prep). On the relationship between FastICA and Infomax: Fast and robust fixed point algorithms for information-maximization.
 }
 \author{
 Nathaniel E. Helwig <helwig@umn.edu>
@@ -90,16 +88,15 @@ The Infomax approach finds the orthogonal rotation matrix \code{R} that (approxi
 
 # generate noiseless data (p==r)
 set.seed(123)
-nobs=1000
-Amat=cbind(icasamp("a","rnd",nobs),icasamp("b","rnd",nobs))
-Bmat=matrix(2*runif(4),2,2)
-Xmat=tcrossprod(Amat,Bmat)
+nobs <- 1000
+Amat <- cbind(icasamp("a","rnd",nobs),icasamp("b","rnd",nobs))
+Bmat <- matrix(2*runif(4),2,2)
+Xmat <- tcrossprod(Amat,Bmat)
 
 # ICA via Infomax with 2 components
-imod=icaimax(Xmat,2)
-acyidx(Bmat,imod$M)
-congru(Amat[,1],imod$S[,1])
-congru(Amat[,2],imod$S[,2])
+imod <- icaimax(Xmat,2)
+acy(Bmat,imod$M)
+congru(Amat,imod$S)
 
 
 
@@ -107,15 +104,14 @@ congru(Amat[,2],imod$S[,2])
 
 # generate noiseless data (p!=r)
 set.seed(123)
-nobs=1000
-Amat=cbind(icasamp("a","rnd",nobs),icasamp("b","rnd",nobs))
-Bmat=matrix(2*runif(200),100,2)
-Xmat=tcrossprod(Amat,Bmat)
+nobs <- 1000
+Amat <- cbind(icasamp("a","rnd",nobs),icasamp("b","rnd",nobs))
+Bmat <- matrix(2*runif(200),100,2)
+Xmat <- tcrossprod(Amat,Bmat)
 
 # ICA via Infomax with 2 components
-imod=icaimax(Xmat,2)
-congru(Amat[,1],imod$S[,1])
-congru(Amat[,2],imod$S[,2])
+imod <- icaimax(Xmat,2)
+congru(Amat,imod$S)
 
 
 
@@ -123,15 +119,14 @@ congru(Amat[,2],imod$S[,2])
 
 # generate noisy data (p!=r)
 set.seed(123)
-nobs<-1000
-Amat<-cbind(icasamp("a","rnd",nobs),icasamp("b","rnd",nobs))
-Bmat<-matrix(2*runif(200),100,2)
-Emat<-matrix(rnorm(10^5),1000,100)
-Xmat<-tcrossprod(Amat,Bmat)+Emat
+nobs <- 1000
+Amat <- cbind(icasamp("a","rnd",nobs),icasamp("b","rnd",nobs))
+Bmat <- matrix(2*runif(200),100,2)
+Emat <- matrix(rnorm(10^5),1000,100)
+Xmat <- tcrossprod(Amat,Bmat)+Emat
 
 # ICA via Infomax with 2 components
-imod<-icaimax(Xmat,2)
-congru(Amat[,1],imod$S[,1])
-congru(Amat[,2],imod$S[,2])
+imod <- icaimax(Xmat,2)
+congru(Amat,imod$S)
 
 }

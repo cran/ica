@@ -1,7 +1,7 @@
 \name{icasamp}
 \alias{icasamp}
 \title{
-Sample from various source signal distributions
+Sample from Various Source Signal Distributions
 }
 \description{
 Sample observations from the 18 source signal distributions used in Bach and Jordan (2002). Can also return density values and kurtosis for each distribution. Use \code{\link{icaplot}} to plot distributions.
@@ -46,13 +46,13 @@ Inspired by \code{usr_distrib.m} from Bach's (2002) \code{kernel-ica} MATLAB too
 
 # sample 1000 observations from distribution "f"
 set.seed(123)
-mysamp<-icasamp("f","rnd",nsamp=1000)
-xr<-range(mysamp)
+mysamp <- icasamp("f","rnd",nsamp=1000)
+xr <- range(mysamp)
 hist(mysamp,freq=FALSE,ylim=c(0,.8),breaks=sqrt(1000))
 
 # evaluate density of distribution "f"
-xseq<-seq(-5,5,length.out=1000)
-mypdf<-icasamp("f","pdf",data=xseq)
+xseq <- seq(-5,5,length.out=1000)
+mypdf <- icasamp("f","pdf",data=xseq)
 lines(xseq,mypdf)
 
 # evaluate kurtosis of distribution "f"

@@ -1,0 +1,15 @@
+Changes from ver 1.0-0 to ver 1.0-1     [Aug-24-2015]
+   1) ica-package
+	*   Improvements and updates to internals of all functions
+	*   Changed "acyidx" to "acy"
+	*   Major changes to congru functionality (for matrices)
+	*   Bug fix for icafast with alpha != 1
+   2) acy (acyidx)
+	*   Changed function name from "acyidx" to "acy"
+	*   Minor updates to help file and internals
+   3) congru
+	*   Change in default behavior if "x" and "y" are matrices
+	*   Now comparable to "cor" and "cov" functions
+	*   Calculates congruence coefficient matrices
+   4) icafast
+	*   Bug fix for alpha inputs not equal to 1

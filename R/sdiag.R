@@ -1,1 +1,1 @@
-sdiag<-function(x){if(length(x)<2L) matrix(x) else diag(x)}
+sdiag <- function(x){ if(length(x)<2L) matrix(x) else diag(x) }

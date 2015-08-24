@@ -7,7 +7,7 @@
 \alias{sdiag}
 
 
-\title{Internal functions for ica package}
+\title{Internal Functions for ica Package}
 \description{
   Internal functions for ica package.
 }

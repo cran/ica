@@ -1,7 +1,7 @@
 \name{icafast}
 \alias{icafast}
 \title{
-ICA via FastICA algorithm
+ICA via FastICA Algorithm
 }
 \description{
 Computes ICA decomposition using Hyvarinen's (1999) FastICA algorithm with various options.
@@ -53,8 +53,6 @@ Tuning parameter for "logcosh" contrast function (1 <= \code{alpha} <= 2).
 \item{alpha}{Tuning parameter (same as input).}
 }
 \references{
-Helwig, N.E. (in prep). On the relationship between FastICA and Infomax: Fast and robust fixed point algorithms for information-maximization.
-
 Helwig, N.E. & Hong, S. (2013). A critique of Tensor Probabilistic Independent Component Analysis: Implications and recommendations for multi-subject fMRI data analysis. \emph{Journal of Neuroscience Methods, 213}, 263-273.
 
 Hyvarinen, A. (1999). Fast and robust fixed-point algorithms for independent component analysis. \emph{IEEE Transactions on Neural Networks, 10}, 626-634.
@@ -79,16 +77,15 @@ The FastICA algorithm finds the orthogonal rotation matrix \code{R} that (approx
 
 # generate noiseless data (p==r)
 set.seed(123)
-nobs<-1000
-Amat<-cbind(icasamp("a","rnd",nobs),icasamp("b","rnd",nobs))
-Bmat<-matrix(2*runif(4),2,2)
-Xmat<-tcrossprod(Amat,Bmat)
+nobs <- 1000
+Amat <- cbind(icasamp("a","rnd",nobs),icasamp("b","rnd",nobs))
+Bmat <- matrix(2*runif(4),2,2)
+Xmat <- tcrossprod(Amat,Bmat)
 
 # ICA via FastICA with 2 components
-imod<-icafast(Xmat,2)
-acyidx(Bmat,imod$M)
-congru(Amat[,1],imod$S[,1])
-congru(Amat[,2],imod$S[,2])
+imod <- icafast(Xmat,2)
+acy(Bmat,imod$M)
+congru(Amat,imod$S)
 
 
 
@@ -96,15 +93,14 @@ congru(Amat[,2],imod$S[,2])
 
 # generate noiseless data (p!=r)
 set.seed(123)
-nobs<-1000
-Amat<-cbind(icasamp("a","rnd",nobs),icasamp("b","rnd",nobs))
-Bmat<-matrix(2*runif(200),100,2)
-Xmat<-tcrossprod(Amat,Bmat)
+nobs <- 1000
+Amat <- cbind(icasamp("a","rnd",nobs),icasamp("b","rnd",nobs))
+Bmat <- matrix(2*runif(200),100,2)
+Xmat <- tcrossprod(Amat,Bmat)
 
 # ICA via FastICA with 2 components
-imod<-icafast(Xmat,2)
-congru(Amat[,1],imod$S[,1])
-congru(Amat[,2],imod$S[,2])
+imod <- icafast(Xmat,2)
+congru(Amat,imod$S)
 
 
 
@@ -112,15 +108,14 @@ congru(Amat[,2],imod$S[,2])
 
 # generate noisy data (p!=r)
 set.seed(123)
-nobs=1000
-Amat=cbind(icasamp("a","rnd",nobs),icasamp("b","rnd",nobs))
-Bmat=matrix(2*runif(200),100,2)
-Emat=matrix(rnorm(10^5),1000,100)
-Xmat=tcrossprod(Amat,Bmat)+Emat
+nobs <- 1000
+Amat <- cbind(icasamp("a","rnd",nobs),icasamp("b","rnd",nobs))
+Bmat <- matrix(2*runif(200),100,2)
+Emat <- matrix(rnorm(10^5),1000,100)
+Xmat <- tcrossprod(Amat,Bmat)+Emat
 
 # ICA via FastICA with 2 components
-imod=icafast(Xmat,2)
-congru(Amat[,1],imod$S[,1])
-congru(Amat[,2],imod$S[,2])
+imod <- icafast(Xmat,2)
+congru(Amat,imod$S)
 
 }

@@ -1,7 +1,7 @@
 \name{icajade}
 \alias{icajade}
 \title{
-ICA via JADE algorithm
+ICA via JADE Algorithm
 }
 \description{
 Computes ICA decomposition using Cardoso and Souloumiac's (1993, 1996) Joint Approximate Diagonalization of Eigenmatrices (JADE) approach.
@@ -65,16 +65,15 @@ The JADE approach finds the orthogonal rotation matrix \code{R} that (approximat
 
 # generate noiseless data (p==r)
 set.seed(123)
-nobs<-1000
-Amat<-cbind(icasamp("a","rnd",nobs),icasamp("b","rnd",nobs))
-Bmat<-matrix(2*runif(4),2,2)
-Xmat<-tcrossprod(Amat,Bmat)
+nobs <- 1000
+Amat <- cbind(icasamp("a","rnd",nobs),icasamp("b","rnd",nobs))
+Bmat <- matrix(2*runif(4),2,2)
+Xmat <- tcrossprod(Amat,Bmat)
 
 # ICA via JADE with 2 components
-imod<-icajade(Xmat,2)
-acyidx(Bmat,imod$M)
-congru(Amat[,1],imod$S[,1])
-congru(Amat[,2],imod$S[,2])
+imod <- icajade(Xmat,2)
+acy(Bmat,imod$M)
+congru(Amat,imod$S)
 
 
 
@@ -82,15 +81,14 @@ congru(Amat[,2],imod$S[,2])
 
 # generate noiseless data (p!=r)
 set.seed(123)
-nobs<-1000
-Amat<-cbind(icasamp("a","rnd",nobs),icasamp("b","rnd",nobs))
-Bmat<-matrix(2*runif(200),100,2)
-Xmat<-tcrossprod(Amat,Bmat)
+nobs <- 1000
+Amat <- cbind(icasamp("a","rnd",nobs),icasamp("b","rnd",nobs))
+Bmat <- matrix(2*runif(200),100,2)
+Xmat <- tcrossprod(Amat,Bmat)
 
 # ICA via JADE with 2 components
-imod<-icajade(Xmat,2)
-congru(Amat[,1],imod$S[,1])
-congru(Amat[,2],imod$S[,2])
+imod <- icajade(Xmat,2)
+congru(Amat,imod$S)
 
 
 
@@ -98,15 +96,14 @@ congru(Amat[,2],imod$S[,2])
 
 # generate noisy data (p!=r)
 set.seed(123)
-nobs<-1000
-Amat<-cbind(icasamp("a","rnd",nobs),icasamp("b","rnd",nobs))
-Bmat<-matrix(2*runif(200),100,2)
-Emat<-matrix(rnorm(10^5),1000,100)
-Xmat<-tcrossprod(Amat,Bmat)+Emat
+nobs <- 1000
+Amat <- cbind(icasamp("a","rnd",nobs),icasamp("b","rnd",nobs))
+Bmat <- matrix(2*runif(200),100,2)
+Emat <- matrix(rnorm(10^5),1000,100)
+Xmat <- tcrossprod(Amat,Bmat)+Emat
 
 # ICA via JADE with 2 components
-imod<-icajade(Xmat,2)
-congru(Amat[,1],imod$S[,1])
-congru(Amat[,2],imod$S[,2])
+imod <- icajade(Xmat,2)
+congru(Amat,imod$S)
 
 }
