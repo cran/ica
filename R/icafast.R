@@ -1,9 +1,10 @@
 icafast <-
-  function(X,nc,center=TRUE,maxit=100,tol=1e-6,Rmat=diag(nc),
-           alg=c("par","def"),fun=c("logcosh","exp","kur"),alpha=1){
+  function(X, nc, center = TRUE, maxit = 100, tol = 1e-6,
+           Rmat = diag(nc), alg = c("par", "def"),
+           fun = c("logcosh", "exp", "kur"), alpha = 1){
     ###### Fast Independent Component Analysis
     ###### Nathaniel E. Helwig (helwig@umn.edu)
-    ###### Last modified: August 23, 2015
+    ###### Last modified: May 23, 2018
     
     ### initial checks
     X <- as.matrix(X)

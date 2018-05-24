@@ -1,10 +1,11 @@
 icaimax <-
-  function(X,nc,center=TRUE,maxit=100,tol=1e-6,Rmat=diag(nc),
-           alg=c("newton","gradient"),fun=c("tanh","log","ext"),
-           signs=rep(1,nc),signswitch=TRUE,rate=1,rateanneal=NULL){
+  function(X, nc, center = TRUE, maxit = 100, tol = 1e-6,
+           Rmat = diag(nc), alg = c("newton", "gradient"),
+           fun = c("tanh", "log", "ext"), signs = rep(1, nc),
+           signswitch = TRUE, rate = 1, rateanneal = NULL){
     ###### ICA via (Fast and Robust) Information-Maximization
     ###### Nathaniel E. Helwig (helwig@umn.edu)
-    ###### Last modified: August 23, 2015
+    ###### Last modified: May 23, 2018
     
     ### initial checks
     X <- as.matrix(X)

@@ -1,6 +1,7 @@
 icaplot <-
-  function(xseq=seq(-2,2,length.out=500),xlab="",ylab="",
-           lty=1,lwd=1,col="black",...){
+  function(xseq = seq(-2,2,length.out=500),
+           xlab = "", ylab = "", lty = 1, 
+           lwd = 1, col = "black", ...){
     
     if(length(lty)!=18L){ lty <- rep(lty[1],18) }
     if(length(lwd)!=18L){ lwd <- rep(lwd[1],18) }

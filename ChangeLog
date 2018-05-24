@@ -1,3 +1,14 @@
+Changes from ver 1.0-1 to ver 1.0-2     [May-24-2018]
+   1) ica-package
+	*   Package file is now update-to-date with Description file
+	*   Updated references throughout
+	*   Remove "congru" function from package
+   2) congru
+	*   Removed function from package
+	*   See "multiway" package for a duplicate of congru
+
+
+
 Changes from ver 1.0-0 to ver 1.0-1     [Aug-24-2015]
    1) ica-package
 	*   Improvements and updates to internals of all functions

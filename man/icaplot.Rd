@@ -7,8 +7,9 @@ Plot Densities of Source Signal Distributions
 Plot density (pdf) and kurtosis for the 18 source signal distributions used in Bach and Jordan (2002); see \code{\link{icasamp}} for more information.
 }
 \usage{
-icaplot(xseq=seq(-2,2,length.out=500),xlab="",ylab="",
-        lty=1,lwd=1,col="black",...)
+icaplot(xseq = seq(-2,2,length.out=500),
+        xlab = "", ylab = "", lty = 1, 
+        lwd = 1, col = "black", ...)
 }
 \arguments{
   \item{xseq}{

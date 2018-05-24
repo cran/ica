@@ -1,8 +1,9 @@
 icajade <-
-  function(X,nc,center=TRUE,maxit=100,tol=1e-6,Rmat=diag(nc)){
+  function(X, nc, center = TRUE, maxit = 100,
+           tol = 1e-6, Rmat = diag(nc)){
     ###### Joint Approximate Diagonalization of Eigenmatrices (JADE)
     ###### Nathaniel E. Helwig (helwig@umn.edu)
-    ###### Last modified: August 23, 2015
+    ###### Last modified: May 23, 2018
     
     ### initial checks
     X <- as.matrix(X)

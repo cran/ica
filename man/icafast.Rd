@@ -7,8 +7,9 @@ ICA via FastICA Algorithm
 Computes ICA decomposition using Hyvarinen's (1999) FastICA algorithm with various options.
 }
 \usage{
-icafast(X,nc,center=TRUE,maxit=100,tol=1e-6,Rmat=diag(nc),
-        alg=c("par","def"),fun=c("logcosh","exp","kur"),alpha=1)
+icafast(X, nc, center = TRUE, maxit = 100, tol = 1e-6,
+        Rmat = diag(nc), alg = c("par", "def"),
+        fun = c("logcosh", "exp", "kur"), alpha = 1)
 }
 \arguments{
   \item{X}{
@@ -85,7 +86,7 @@ Xmat <- tcrossprod(Amat,Bmat)
 # ICA via FastICA with 2 components
 imod <- icafast(Xmat,2)
 acy(Bmat,imod$M)
-congru(Amat,imod$S)
+cor(Amat,imod$S)
 
 
 
@@ -100,7 +101,7 @@ Xmat <- tcrossprod(Amat,Bmat)
 
 # ICA via FastICA with 2 components
 imod <- icafast(Xmat,2)
-congru(Amat,imod$S)
+cor(Amat,imod$S)
 
 
 
@@ -116,6 +117,6 @@ Xmat <- tcrossprod(Amat,Bmat)+Emat
 
 # ICA via FastICA with 2 components
 imod <- icafast(Xmat,2)
-congru(Amat,imod$S)
+cor(Amat,imod$S)
 
 }

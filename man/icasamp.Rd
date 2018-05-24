@@ -7,7 +7,8 @@ Sample from Various Source Signal Distributions
 Sample observations from the 18 source signal distributions used in Bach and Jordan (2002). Can also return density values and kurtosis for each distribution. Use \code{\link{icaplot}} to plot distributions.
 }
 \usage{
-icasamp(dname,query=c("rnd","pdf","kur"),nsamp=NULL,data=NULL)
+icasamp(dname, query = c("rnd","pdf","kur"),
+        nsamp = NULL, data = NULL)
 }
 \arguments{
   \item{dname}{

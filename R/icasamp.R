@@ -1,5 +1,6 @@
 icasamp <-
-  function(dname,query=c("rnd","pdf","kur"),nsamp=NULL,data=NULL){
+  function(dname, query = c("rnd","pdf","kur"),
+           nsamp = NULL, data = NULL){
     
     # initial checks
     dname <- dname[1]

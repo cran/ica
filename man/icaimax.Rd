@@ -7,9 +7,10 @@ ICA via Infomax Algorithm
 Computes ICA decomposition using Bell and Sejnowski's (1995) Information-Maximization (Infomax) approach with various options.
 }
 \usage{
-icaimax(X,nc,center=TRUE,maxit=100,tol=1e-6,Rmat=diag(nc),
-        alg=c("newton","gradient"),fun=c("tanh","log","ext"),
-        signs=rep(1,nc),signswitch=TRUE,rate=1,rateanneal=NULL)
+icaimax(X, nc, center = TRUE, maxit = 100, tol = 1e-6,
+        Rmat = diag(nc), alg = c("newton", "gradient"),
+        fun = c("tanh", "log", "ext"), signs = rep(1, nc),
+        signswitch = TRUE, rate = 1, rateanneal = NULL)
 }
 \arguments{
   \item{X}{
@@ -96,7 +97,7 @@ Xmat <- tcrossprod(Amat,Bmat)
 # ICA via Infomax with 2 components
 imod <- icaimax(Xmat,2)
 acy(Bmat,imod$M)
-congru(Amat,imod$S)
+cor(Amat,imod$S)
 
 
 
@@ -111,7 +112,7 @@ Xmat <- tcrossprod(Amat,Bmat)
 
 # ICA via Infomax with 2 components
 imod <- icaimax(Xmat,2)
-congru(Amat,imod$S)
+cor(Amat,imod$S)
 
 
 
@@ -127,6 +128,6 @@ Xmat <- tcrossprod(Amat,Bmat)+Emat
 
 # ICA via Infomax with 2 components
 imod <- icaimax(Xmat,2)
-congru(Amat,imod$S)
+cor(Amat,imod$S)
 
 }

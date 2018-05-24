@@ -1,13 +1,13 @@
 Package: ica
 Type: Package
 Title: Independent Component Analysis
-Version: 1.0-1
-Date: 2015-08-24
+Version: 1.0-2
+Date: 2018-05-24
 Author: Nathaniel E. Helwig <helwig@umn.edu>
 Maintainer: Nathaniel E. Helwig <helwig@umn.edu>
 Description: Independent Component Analysis (ICA) using various algorithms: FastICA, Information-Maximization (Infomax), and Joint Approximate Diagonalization of Eigenmatrices (JADE).
 License: GPL (>= 2)
 NeedsCompilation: no
-Packaged: 2015-08-24 15:17:01 UTC; Nate
+Packaged: 2018-05-24 05:50:01 UTC; Nate
 Repository: CRAN
-Date/Publication: 2015-08-25 00:51:02
+Date/Publication: 2018-05-24 06:12:53 UTC

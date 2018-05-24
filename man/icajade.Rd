@@ -7,7 +7,8 @@ ICA via JADE Algorithm
 Computes ICA decomposition using Cardoso and Souloumiac's (1993, 1996) Joint Approximate Diagonalization of Eigenmatrices (JADE) approach.
 }
 \usage{
-icajade(X,nc,center=TRUE,maxit=100,tol=1e-6,Rmat=diag(nc))
+icajade(X, nc, center = TRUE, maxit = 100,
+        tol = 1e-6, Rmat = diag(nc))
 }
 \arguments{
   \item{X}{
@@ -73,7 +74,7 @@ Xmat <- tcrossprod(Amat,Bmat)
 # ICA via JADE with 2 components
 imod <- icajade(Xmat,2)
 acy(Bmat,imod$M)
-congru(Amat,imod$S)
+cor(Amat,imod$S)
 
 
 
@@ -88,7 +89,7 @@ Xmat <- tcrossprod(Amat,Bmat)
 
 # ICA via JADE with 2 components
 imod <- icajade(Xmat,2)
-congru(Amat,imod$S)
+cor(Amat,imod$S)
 
 
 
@@ -104,6 +105,6 @@ Xmat <- tcrossprod(Amat,Bmat)+Emat
 
 # ICA via JADE with 2 components
 imod <- icajade(Xmat,2)
-congru(Amat,imod$S)
+cor(Amat,imod$S)
 
 }

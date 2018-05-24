@@ -2,24 +2,22 @@
 \alias{ica-package}
 \alias{ica}
 \docType{package}
-\title{Independent Component Analysis}
+\title{
+\packageTitle{ica}
+}
 \description{
-Independent Component Analysis (ICA) using various algorithms: FastICA, Information-Maximization (Infomax), and Joint Approximate Diagonalization of Eigenmatrices (JADE).
+\packageDescription{ica}
 }
 \details{
-%\tabular{ll}{
-%Package: \tab ica\cr
-%Type: \tab Package\cr
-%Version: \tab 1.0\cr
-%Date: \tab 2013-08-31\cr
-%License: \tab GPL (>=2)\cr
-%}
-The functions \code{\link{icafast}}, \code{\link{icaimax}}, and \code{\link{icajade}} calculate ICA demcompositions using the FastICA, Infomax, and JADE algorithms (respectively). The function \code{\link{icasamp}} can be used to sample from various interesting distirubtions, which are useful for comparing ICA algorithms.
+
+The DESCRIPTION file:
+\packageDESCRIPTION{ica}
+\packageIndices{ica}
 }
 \author{
-Nathaniel E. Helwig <helwig@umn.edu>
+\packageAuthor{ica}
 
-Maintainer: Nathaniel E. Helwig <helwig@umn.edu>
+Maintainer: \packageMaintainer{ica}
 }
 \references{
   Amari, S., Cichocki, A., & Yang, H.H. (1996). A new learning algorithm for blind signal separation. In D. S. Touretzky, M. C. Mozer, and M. E. Hasselmo (Eds.), \emph{Advances in Neural Information Processing Systems, 8}. Cambridge, MA: MIT Press.
