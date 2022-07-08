@@ -1,3 +1,20 @@
+
+Changes from ver 1.0-2 to ver 1.0-3     [July-08-2022]
+   1) Computational improvements for n < p
+	*   Now computes initial PCA using eigen of X %*% t(X) if n < p
+	*   Applies to all ICA functions (fast, imax, and jade)
+   2) Added "ica" wrapper function
+	*   Can be used to fit ICA model via FastICA, Infomax, or JADE
+	*   The "method" argument controls the decomposition method
+   3) Added "converged" output to all ICA functions
+	*   converged = TRUE if algorithm converged (w.r.t. user-specified tol)
+	*   converged = FALSE if maximum number of iterations (maxit) is reached
+   4) Added classes and print method for all ICA functions
+	*   Outputs are now of class "icafast", "icaimax", or "icajade"
+	*   Print method prints basic details about model fit and algorithm
+
+
+
 Changes from ver 1.0-1 to ver 1.0-2     [May-24-2018]
    1) ica-package
 	*   Package file is now update-to-date with Description file

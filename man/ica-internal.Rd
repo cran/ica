@@ -5,6 +5,9 @@
 
 %% List of Internal Functions Called
 \alias{sdiag}
+\alias{print.icafast}
+\alias{print.icaimax}
+\alias{print.icajade}
 
 
 \title{Internal Functions for ica Package}
